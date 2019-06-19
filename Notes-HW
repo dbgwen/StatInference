@@ -44,6 +44,7 @@
         - the sample mean is unbiased, the population mean of its distribution is the mean that its trying to estimate
         - the more that goes into the same mean, the more concentrated its density, mass function is around the population mean. 
 
+Random variables are said to be iid if they are ndependent and identically distributed. By independent we mean statistically unrelated from one another". Identically distributed means hat "all have been drawn from the same population distribution"
 
 ## Week 2 Practice Exercises
     http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw2.html#1
