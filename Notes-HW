@@ -1,10 +1,64 @@
-## Homework Practice Exercises
+## Week 1 Homework Practice Exercises
+    http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw1.html#1
+    
+## Week 1 - Module 2 - Probability
+  - Probability measures a population quantity that summarizes the randomness (conceptual thing that exists in the population that we would like to estimate). 
+  - Probability operates on potential outcomes
+  - Function assigned 0-1
+  - P (A U B) cannot both occur; P(A) + P(B)
+  - Probability that nothing occurs = 0; 1-P = probability something will occur
+  - P(A U B) = P(A) + P(B) - P(A U B); can't just add probabilities if they have an interaction
+  - Probability calculus is the foundation for probability - densitities and mass functions for random variables
+      - Random variable is numeric outcome of experiment (discrete or continuous)
+      - Probability Mass Function (PMF) - evaluated at a value corresponds to the probability that a random variable takes that value, to be a valid pmf, p must satisfiy: 1) not equal zero, 2) sum of possible values that a random variable can take must equal one; examples - Poisson, binomial, Bernoulli distrbutions
+      - Probability Density Function (PDF): a function associated with continuous random variables; corresponds to to probabilities for that random variable. 
+      - Cumulative distrbution function (CDF) of a random variable (X) returns the probability that the ranomd variable is less than or equal to the value (X) = F(x) = P(X =< x)
+      - Survival function: S(x) = 1-x^2
+      - Quantiles: a percentile is a quantile with an alpha expressed as a percent rather than a proportion. The population median is the 50th percentile. Percentiles ARE NOT probabilities. 
 
-http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw1.html#1
+## Week 1 - Module 3 - Conditional Probability
+  - "What is the probability given partial information about what has occurred?"
+  - If P(B) > 0, than the conditional probability of A is: P(A|B) = P(A ^ B)/P(B)
+  - If A and B are unrelated, then the independent probability is: P(A|B) = P(A)P(B)/P(B) = P(A)
+  - Baye's Rule: reverse the rule of the probability, we have P(B|A), but what is P(A|B)? Useful for diagnostics
+          P(B|A) = P(A|B)P(B) / P(A|B)P(B) + P(A|Bc)P(Bc)
+      - Sensitivity = P(+|D)
+      - Specificity = P(-|D)
+      - Positive Predictive Value = P(D|+)
+      - Negative Predictive Value = P(Dc|-)
+      - P(D|+) / P(Dc|+) = P(D)/(P(Dc) or Odds of disease
+   - Independence - P(A|B) = P(A) where P(B)<0 - you cannot just multiply probabilities! 
 
-http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw2.html#1
+## Week 1 - Module 4 - Expected Values
+  - Expected values are very useful for characterizing populations and usually represent the first thing that we're interested in estimating.
+  - Expected Values characterize a distribution, for example, the mean, which characterizes the center of a density or mass function. 
+  - Expected values include: mean, variance, skewness
+  - The center of mass is the empirical mean
+  - Expected Values are: 
+        - properties of populations
+        - the population mean = center of population mass
+        - sample mean is the center of mass of the observed data
+        - the sample mean is an estimate of the population mean
+        - the sample mean is unbiased, the population mean of its distribution is the mean that its trying to estimate
+        - the more that goes into the same mean, the more concentrated its density, mass function is around the population mean. 
 
-http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw3.html#1
 
-http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw4.html#1
+## Week 2 Practice Exercises
+    http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw2.html#1
+    
+    
+## Week 3 Practice Exercises
+    http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw3.html#1
+    
+    
+    
+## Week 4 Practice Exercises
+    http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw4.html#1
+
+
+
+
+
+
+
 
