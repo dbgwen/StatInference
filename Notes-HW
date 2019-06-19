@@ -15,6 +15,8 @@
       - Cumulative distrbution function (CDF) of a random variable (X) returns the probability that the ranomd variable is less than or equal to the value (X) = F(x) = P(X =< x)
       - Survival function: S(x) = 1-x^2
       - Quantiles: a percentile is a quantile with an alpha expressed as a percent rather than a proportion. The population median is the 50th percentile. Percentiles ARE NOT probabilities. 
+      -  A probability model connects data to a population using assumptions
+      - A sample median is an estimator of a population median (the estimand).
 
 ## Week 1 - Module 3 - Conditional Probability
   - "What is the probability given partial information about what has occurred?"
