@@ -49,6 +49,35 @@ Random variables are said to be iid if they are ndependent and identically distr
 ## Week 2 Practice Exercises
     http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw2.html#1
     
+    ## Variability
+        The variance Var(x) = p(1-p)
+        Sample variance: is the average squared variance - sample mean
+      - The sample variance estimates the population variance.
+      - The distribution of the sample variance is centered at what its estimating.
+      - It gets more concentrated around the population variance with larger sample sizes.
+      - The variance of the sample mean is the population variance divided by n.
+      - The square root is the standard error.
+      - It turns out that we can say a lot about the distribution of averages from random samples,
+even though we only get one to look at in a given data set.
+    
+   ## Distributions 
+      Most common distributions
+      - Bernoulii distribution - binomial trials
+        Bernoulli random variables are commonly used for modeling any binary trait for a random sample.
+        So, for example, in a random sample whether or not a participant has high blood pressure would be
+        reasonably modeled as Bernoulli
+      - The normal distribution is so important that it is useful to memorize reference probabilities and
+        quantiles. The image below shows reference lines at 0, 1, 2 and 3 standard deviations above and
+        below 0. 
+      - This is for the standard normal; however, all of the rules apply to non standard normals as 0, 1, 2 and 3 standard deviations above and below, the population mean.
+            1. Approximately 68\%, 95\% and 99\% of the normal density lies within 1, 2 and 3 standard deviations from the mean, respectively.
+            2. -1.28, -1.645, -1.96 and -2.33 are the 10th, 5th, 2:5th and 1st percentiles of the standard normal distribution, respectively.
+            3. By symmetry, 1.28, 1.645, 1.96 and 2.33 are the 90th, 95th, 97:5th and 99th percentiles of the standard normal distribution, respectively.
+      - The Poisson distribution is used to model counts. It is perhaps only second to the normal distribution usefulness. In fact, the Bernoulli, binomial and multinomial distributions can all be modeled by clever uses of the Poisson.
+             The Poisson distribution is useful for rates, counts that occur over units of time. Specifically, if X  Poisson(t) where  = E[X/t] is the expected count per unit of time and t is the total monitoring time.
+    
+    ## Asymptotics
+        - 
     
 ## Week 3 Practice Exercises
     http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw3.html#1
