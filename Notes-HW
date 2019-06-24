@@ -77,13 +77,15 @@ even though we only get one to look at in a given data set.
              The Poisson distribution is useful for rates, counts that occur over units of time. Specifically, if X  Poisson(t) where  = E[X/t] is the expected count per unit of time and t is the total monitoring time.
     
     ## Asymptotics
-        - 
+        - The CLT states that averages are approximately normal, with distributions.
+                – centered at the population mean.
+                – with standard deviation equal to the standard error of the mean.
+                – CLT gives no guarantee that $n$ is large enough.
     
 ## Week 3 Practice Exercises
     http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw3.html#1
     
   ## Confidence intervals
-        Est  Z  SEest
         The t distribution is useful for small sample size comparisons
         Normal distribution: Z ot t-test statistic
         
@@ -93,7 +95,10 @@ even though we only get one to look at in a given data set.
         Type II error ACCEPTS a FALSE null hypothesis H_0
         Bottom line: if you fail to reject the one sided test, you know that you will fail to reject the two sided.
     
-    
+  ## P-values
+        The p-value is the probability under the null hypothesis of obtaining evidence as or more extreme than your test statistic (obtained from your observed data) in the direction of the alternative hypothesis.
+
+
 ## Week 4 Practice Exercises
     http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw4.html#1
 
