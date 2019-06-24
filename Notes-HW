@@ -74,7 +74,7 @@ even though we only get one to look at in a given data set.
             2. -1.28, -1.645, -1.96 and -2.33 are the 10th, 5th, 2:5th and 1st percentiles of the standard normal distribution, respectively.
             3. By symmetry, 1.28, 1.645, 1.96 and 2.33 are the 90th, 95th, 97:5th and 99th percentiles of the standard normal distribution, respectively.
       - The Poisson distribution is used to model counts. It is perhaps only second to the normal distribution usefulness. In fact, the Bernoulli, binomial and multinomial distributions can all be modeled by clever uses of the Poisson.
-             The Poisson distribution is useful for rates, counts that occur over units of time. Specifically, if X  Poisson(t) where  = E[X/t] is the expected count per unit of time and t is the total monitoring time.
+             The Poisson distribution is useful for rates, counts that occur over units of time. 
     
     ## Asymptotics
         - The CLT states that averages are approximately normal, with distributions.
@@ -97,14 +97,22 @@ even though we only get one to look at in a given data set.
     
   ## P-values
         The p-value is the probability under the null hypothesis of obtaining evidence as or more extreme than your test statistic (obtained from your observed data) in the direction of the alternative hypothesis.
-
+            - the p-value is the smallest value of alpha at which you will reject the null hypothesis
 
 ## Week 4 Practice Exercises
     http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw4.html#1
 
+    ## Power
+        Power is the probability of rejecting the null hypothesis when it is false. Ergo, power (as its name would suggest) is a good thing; you want more power. A type II error (a bad thing, as its name would suggest) is failing to reject the null hypothesis when it’s false; the probability of a type II error is usually called power = 1 - beta
+            - Power goes up as akpha gets bigger
+            - Power of a one-sided test is greater than a two-sided test
+            - Power goes up as the sample size goes up
+            - The power depends on the effect size, the difference in means in sd
+    
+    ## Multiple Testing
+    Another name for a Type II error is False Negative, since it is falsely claiming a nonsignificant (negative) result.
 
-
-
+    ## Resampling
 
 
 
