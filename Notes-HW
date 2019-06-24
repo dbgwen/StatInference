@@ -82,6 +82,16 @@ even though we only get one to look at in a given data set.
 ## Week 3 Practice Exercises
     http://bcaffo.github.io/courses/06_StatisticalInference/homework/hw3.html#1
     
+  ## Confidence intervals
+        Est  Z  SEest
+        The t distribution is useful for small sample size comparisons
+        Normal distribution: Z ot t-test statistic
+        
+        
+  ## Hypothesis Testing
+        Type I error REJECTS a TRUE null hypothesis H_0
+        Type II error ACCEPTS a FALSE null hypothesis H_0
+        Bottom line: if you fail to reject the one sided test, you know that you will fail to reject the two sided.
     
     
 ## Week 4 Practice Exercises
