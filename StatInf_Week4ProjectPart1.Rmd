@@ -1,0 +1,78 @@
+---
+title: "Week 4 Project: Simulation Study"
+author: "Deborah Passey"
+date: "6/25/2019"
+output: html_document
+---
+ 
+## Simulation 
+
+This project investigate the exponential distribution in R and compare it with the Central Limit Theorem. This simulation will illustrate the properties of the distribution of the mean of 40 exponentials. The simulated data will follow an exponential distrbution, where the mean of exponential distribution is 1/lambda and the standard deviation is also 1/lambda. The simulated dataset was built using 10,000 simulations.        
+
+```{r data, include=FALSE}
+
+set.seed(1)
+mns=NULL
+for (i in 1 : 10000) mns = c(mns, mean(rexp(40,0.2)))
+simdata <- data.frame(mns,size=40)
+
+mns2 = NULL
+for (i in 1 : 10000) mns2 = c(mns2, mean(runif(40)))
+x <- data.frame(mns2,size=10000)
+s <- sd(x$mns2)
+m <- mean(x$mns2)
+
+ library(dplyr)
+  library("ggpubr")
+  library(gtable)
+  library(knitr)
+  library(kableExtra)
+  library(ggplot2)
+
+```
+
+
+
+## Sample Mean vs Theoretical Mean    
+The sample mean estimates the population mean. The theoretical mean of exponential distribution is 1/lambda, where lambda = 0.2. The sample mean is constructed from 10,000 simulation samples, so we expect the sample mean to be close to the theoretical mean.    
+  
+```{r theoretical mean}
+sampleMean <- mean(mns)
+theoreticalMean <- 1/0.2
+means <- cbind(sampleMean, theoreticalMean)
+```  
+
+``` {r meantable, echo=FALSE, results='asis'}
+kable(means, caption="Means") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+```
+
+## Sample Variance vs Theoretical Variance    
+The variance is the measure of spread, or the expected squared distance form the mean. The standard deviation of the theoretical sample is 1/lambda. We would expect the sample variance to be closer to this theoretical mean. 
+  
+```{r sample variance}
+theoreticalVar <- (1/0.2)^2/40
+sampleVar <- var(mns)
+variance <- data.frame(theoreticalVar,sampleVar)
+```  
+
+``` {r vartable, echo=FALSE, results='asis'}
+kable(variance, caption="Variance") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+```  
+  
+  
+  
+    
+    
+## Normal Distribution   
+The distrbution of the exponentials from 10,000 simulations looks very similar to the normal distrbution. This is due to the Central Limit Theorem (CLT). The CLT states that when the sample size is large enough, the sample distrbution starts to approximate the normal distrbution bell-curve. This suggests that the mean of all samples from a given population will be approximately equal to the mean of the population. The blue line shows the theoretical mean.    
+        
+        
+```{r normal distribution, fig.height=4, fig.width=8}
+
+par(mar=c(4,4,4,4), bg="azure", family="HersheySans", lwd=2)
+hist(mns, breaks="fd", col="forestgreen", border="black", main="Distrbution of Exponentials from 10,000 Simulations", xlab="Exponentials") 
+abline(v=theoreticalMean, col="mediumblue", lwd=3)
+
+```  

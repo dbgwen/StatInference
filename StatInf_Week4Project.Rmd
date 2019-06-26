@@ -1,0 +1,104 @@
+---
+title: 'Week 4 Project: Inferential Data Analysis'
+author: "Deborah Passey"
+date: "6/22/2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+##  Inferential Analysis
+
+This project will analyze the tooth data available on R, "The Effect of Vitamin C on Tooth Growth in Guinea Pigs". This dataset provides data on the length of odontoblasts (cells responsible for tooth growth) in 60 guinea pigs. Each animal received one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) by one of two delivery methods, orange juice or ascorbic acid (a form of vitamin C and coded as VC).  
+
+
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE)
+```  
+
+
+## Data  
+This dataset contains 60 observations for 3 variables:    
+  1. len: numeric tooth length  
+  2. supp: supplment type - oj = orange juice, vc = ascorbhic acid  
+  3. dose: dose in milligrams/day - 0.5mg, 1mg, and 2mg  
+       
+    
+```{r data, include=FALSE}
+  data(ToothGrowth)
+  library(dplyr)
+  library("ggpubr")
+  library(gtable)
+  library(knitr)
+  library(kableExtra)
+  library(ggplot2)
+```    
+
+```{r ToothGrowth Summary, include=FALSE}
+  
+dose <- group_by(ToothGrowth, dose) %>%
+  summarise(
+    count = n(),
+    mean = mean(len, na.rm = TRUE),
+    sd = sd(len, na.rm = TRUE)
+  )
+  
+supp<- group_by(ToothGrowth, supp) %>%
+  summarise(
+    count = n(),
+    mean = mean(len, na.rm = TRUE),
+    sd = sd(len, na.rm = TRUE)
+  )
+```  
+
+``` {r table1, echo=FALSE, results='asis'}
+
+kable(dose, caption="Dose") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+```  
+
+``` {r table2, echo=FALSE, results='asis'}
+
+kable(supp, caption="Supplement") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+
+```  
+
+
+```{r, bloxplot1, fig.height=3, fig.width=3}
+  ggboxplot(ToothGrowth, x ="dose", y ="len", 
+          color = "dose", palette = c("#00AFBB", "#E7B800", "#FC4E07"),
+          order = c("0.5", "1", "2"),
+          ylab = "Length", xlab = "Dose")
+```
+
+```{r, bloxplot2, fig.height=3, fig.width=3}
+ggboxplot(ToothGrowth, x = "supp", y = "len", 
+          color = "supp", palette = c("#00AFBB", "#FC4E07"),
+          order = c("VC", "OJ"),
+          ylab = "Tooth Growth", xlab = "Supplement")
+  
+```  
+
+
+## Hypothesis Test   
+      
+This analysis will use two hypothesis tests. A t-test will be used to compare the tooth growth length between the two types of Vitamin C supplements (orange juice vs ascorbic acid). The t-test assumes independent observations that follow a normal distrbution. The second hypothesis test is a one-way analysis of variance (ANOVA) to compare tooth growth by dose group (0.5mg, 1mg, and 2mg). This anlaysis assumes observations are obtained independently and randomly from a population defined by factor levels (factors = doses). The ANOVA assumes the data is noramlly distrbuted at each level, and there is a common variance for the population.    
+      
+```{r Hypothesis Testing}
+t.test(len ~ supp, paired = FALSE, var.equal = TRUE, data = ToothGrowth)
+
+res.aov <- aov(len ~ dose, data = ToothGrowth)
+summary(res.aov)
+
+```    
+
+
+## Conclusions  
+The t-test indicated that there was not a statistically significant difference between the types of vitamin C supplements (p-0.06). The mean toothe growth length for the orange juice group was 20.6 compared to the ascorbic acid group, which had a mean tooth growth length of 16.9.   
+
+The one-way ANOVA indicated that there was a significant differenct between the dose groups (p<0.001). This hypothesis test indicates that there are significant differences between the average toothe growth lengths for the dose of Vitamin C.   
+
+
+
+
